@@ -130,7 +130,7 @@ class MSC_helper
     {
         $xoosh_parent_term_id = 0;
         if ($parent_id) {
-            $xoosh_parent_term_id = get_term_meta($parent_id, MSC_Sync_helper::$META_TERM_KEY_SYNC_XOOSH_TERM_ID, true);
+            $xoosh_parent_term_id = get_term_meta($parent_id, MSC_helper::$META_TERM_KEY_SYNC_XOOSH_TERM_ID, true);
         }
 
         return $xoosh_parent_term_id ? $xoosh_parent_term_id : $parent_id;
