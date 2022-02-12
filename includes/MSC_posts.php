@@ -72,8 +72,8 @@ class MSC_posts
         $category_ids = $helper->get_post_terms_ids($post_id, 'category');
         $audio_category_ids = $helper->get_post_terms_ids($post_id, 'audio_category');
         $books_category_ids = $helper->get_post_terms_ids($post_id, 'books_category');
-        $_thumbnail_url = isset($post_metas['_thumbnail_id'][0]) ? wp_get_attachment_thumb_url($post_metas['_thumbnail_id'][0]) : '';
-
+        $_thumbnail_url = isset($post_metas['_thumbnail_id'][0]) ? wp_get_attachment_image_url($post_metas['_thumbnail_id'][0], 'large') : '';
+        $_thumbnail_url = str_replace('http', 'https', $_thumbnail_url);
 
         $sync_xoosh_post_id = get_post_meta($post_id, MSC_helper::$META_POST_KEY_SYNC_XOOSH_POST_ID, true);
         $get_post_id_case_update = $sync_xoosh_post_id ? $sync_xoosh_post_id : $post_id;
